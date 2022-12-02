@@ -1,26 +1,38 @@
 import 'package:cookfy_flutter/model/Recipe.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Favorites extends StatefulWidget {
+  const Favorites({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Favorites> createState() => _FavoritesState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _FavoritesState extends State<Favorites> {
   List<Recipe> recipesFuture = getRecipes();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        //automaticallyImplyLeading: false,
+        centerTitle: true,
+        title:
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+          Text("Cook", style: TextStyle(fontSize: 22)),
+          Text("Fy", style: TextStyle(fontSize: 22, color: Colors.green)),
+          
+        ]),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+      ),
+            body: Center(
         child: buildRecipe(recipesFuture),
       )
     );
   }
 
-  Widget buildRecipe(List<Recipe> recipes) => ListView.builder(
+    Widget buildRecipe(List<Recipe> recipes) => ListView.builder(
     itemCount: recipes.length,
     itemBuilder: (context, index){
         final recipe = recipes[index]; 

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CreatePost extends StatefulWidget {
-  const CreatePost({Key? key}) : super(key: key);
+class EditPost extends StatefulWidget {
+  const EditPost({super.key});
 
   @override
-  State<CreatePost> createState() => _CreatePostState();
+  State<EditPost> createState() => _EditPostState();
 }
 
-class _CreatePostState extends State<CreatePost> {
-  String? title, description;
-
+class _EditPostState extends State<EditPost> {
+  String? title, description, content;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Column(
+    return Container(
+      child: Column(
           children: <Widget>[
             SizedBox(
               height: 10,
@@ -53,8 +51,7 @@ class _CreatePostState extends State<CreatePost> {
               ),
             ),
           ],
-        ),
-      ),
+        )
     );
   }
 }

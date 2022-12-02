@@ -1,17 +1,17 @@
 import 'package:cookfy_flutter/model/Recipe.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HotPage extends StatefulWidget {
+  const HotPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HotPage> createState() => _HotPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HotPageState extends State<HotPage> {
   List<Recipe> recipesFuture = getRecipes();
-
-  @override
+  
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
