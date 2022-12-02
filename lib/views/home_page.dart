@@ -1,4 +1,5 @@
 import 'package:cookfy_flutter/model/Recipe.dart';
+import 'package:cookfy_flutter/views/post_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,6 +29,9 @@ class _HomePageState extends State<HomePage> {
           child: ListTile(
             title: Text(recipe.Title),
             subtitle: Text(recipe.Id.toString()),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => PostPage(recipe: recipe)));
+            },
           ),
         );
     });
