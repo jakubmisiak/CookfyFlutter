@@ -8,7 +8,7 @@ class CreatePost extends StatefulWidget {
 }
 
 class _CreatePostState extends State<CreatePost> {
-  String? title, description;
+  String? title, description, value;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +47,12 @@ class _CreatePostState extends State<CreatePost> {
                     decoration: InputDecoration(hintText: "Description"),
                     onChanged: (val) {
                       description = val;
+                    },
+                  ),
+                    TextField(
+                    decoration: InputDecoration(hintText: "What are you thinking about?"),
+                    onChanged: (val) {
+                      value = val;
                     },
                   )
                 ],
